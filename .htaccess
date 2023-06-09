@@ -1,0 +1,20 @@
+# rewriting engine
+RewriteEngine On
+
+# todas as listas
+RewriteRule ^lists/?$ index.php [NC,L]
+
+# lista por id
+RewriteRule ^list/(\d+)?$ index.php?listId=$1 [NC,L]
+
+# duplicar lista
+RewriteRule ^duplicate/(\d+)?$ index.php?listIdDuplicate=$1 [NC,L]
+
+# todos os produtos de uma lista
+RewriteRule ^list/(\d+)/items?$ index.php?listIdItems=$1 [NC,L]
+
+# rota para um produto 
+RewriteRule ^item/(\d+)$ index.php?itemId=$1 [NC,L]
+
+# rota para duplicar uma lista
+RewriteRule ^list/(\d+)/duplicate$ index.php?listId=$1 [NC,L]
